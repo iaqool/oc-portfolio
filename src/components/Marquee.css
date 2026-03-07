@@ -1,0 +1,49 @@
+.marquee-container {
+    width: 100vw;
+    overflow: hidden;
+    background: var(--accent-neon);
+    color: var(--bg-color);
+    padding: 0.5rem 0;
+    border-top: 1px solid var(--accent-neon-hover);
+    border-bottom: 1px solid var(--accent-neon-hover);
+    position: absolute;
+    /* Place it nicely between header and hero if relative */
+    top: 70px;
+    /* Offset for header */
+    left: 0;
+    z-index: 50;
+    box-shadow: 0 0 15px var(--accent-neon-dim);
+    transform: rotate(-1deg) scale(1.02);
+    /* Slight angle for aesthetic */
+}
+
+.marquee-content {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-left 25s linear infinite;
+    width: max-content;
+}
+
+.marquee-text {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding-right: 1rem;
+    text-transform: uppercase;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+/* Pause on hover */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
