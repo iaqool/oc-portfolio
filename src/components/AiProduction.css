@@ -170,6 +170,14 @@
     letter-spacing: 0.5px;
 }
 
+.ai-video-note {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 5px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+
 .ai-service-btn {
     background: none;
     border: none;
@@ -382,4 +390,33 @@
     object-fit: contain;
     display: block;
     background: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .ai-production-section {
+        padding: 4rem 1rem;
+    }
+
+    .showcase-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .ai-production-header {
+        margin-bottom: 2rem;
+    }
+
+    .ai-service-card {
+        padding: 1.5rem;
+    }
+
+    .carousel-item.video-item {
+        width: 260px;
+        height: 390px;
+    }
+
+    .carousel-item.photo-item {
+        width: 300px;
+        height: 225px;
+    }
 }

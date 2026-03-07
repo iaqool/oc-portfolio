@@ -128,3 +128,22 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+    .cases-section {
+        padding: 4rem 1rem;
+    }
+
+    .case-content {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    .case-title {
+        font-size: 1.4rem;
+    }
+
+    .case-desc {
+        font-size: 0.95rem;
+    }
+}

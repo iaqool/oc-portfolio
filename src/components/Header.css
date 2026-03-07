@@ -74,3 +74,26 @@
     color: var(--bg-color);
     box-shadow: 0 0 20px var(--accent-neon), inset 0 0 10px var(--accent-neon);
 }
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .cta-btn.sm {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}

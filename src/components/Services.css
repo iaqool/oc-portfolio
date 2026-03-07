@@ -149,3 +149,17 @@
     opacity: 1;
     transform: rotate(30deg) translate(20%, 20%);
 }
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 4rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .service-card {
+        padding: 1.5rem 1.25rem;
+    }
+}
