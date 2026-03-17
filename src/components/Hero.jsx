@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './Hero.css';
 import profileImg0 from '../assets/profile.jpg';
 import profileImg1 from '../assets/profile1.png';
@@ -13,6 +14,7 @@ const profileImages = [
 ];
 
 function Hero() {
+    const { t } = useLanguage();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
@@ -36,21 +38,21 @@ function Hero() {
             <div className="hero-layout">
                 <div className="hero-content">
                     <p className="status-badge">
-                        <span className="dot"></span> Открыт для новых проектов
+                        <span className="dot"></span> {t.hero.status}
                     </p>
 
                     <div className="title-row">
-                        <h1 className="glitch-title" data-text="Oleg Chsherbakov">
-                            Oleg Chsherbakov
+                        <h1 className="glitch-title" data-text={t.hero.title}>
+                            {t.hero.title}
                         </h1>
                         <div className="title-socials">
-                            <a href="https://instagram.com/oiboi.eth" target="_blank" rel="noreferrer" className="social-icon" title="Мой Инстаграм">
+                            <a href="https://instagram.com/oiboi.eth" target="_blank" rel="noreferrer" className="social-icon" title={t.hero.igProfile}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
-                            <a href="https://instagram.com/gelodrip" target="_blank" rel="noreferrer" className="social-icon" title="Инста Мои Работы">
+                            <a href="https://instagram.com/gelodrip" target="_blank" rel="noreferrer" className="social-icon" title={t.hero.igWork}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             </a>
-                            <span className="social-pointer">← мои работы тут</span>
+                            <span className="social-pointer">{t.hero.myWork}</span>
                             <a href="https://www.youtube.com/@oiboigelo" target="_blank" rel="noreferrer" className="social-icon" title="YouTube">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                             </a>
@@ -65,31 +67,31 @@ function Hero() {
 
                     <div className="titles-container">
                         <h2 className="hero-subtitle type-effect">
-                            AI Fullstack Разработчик &amp; Архитектор Виртуальных Инфлюенсеров
+                            {t.hero.subtitle1}
                         </h2>
                         <h2 className="hero-subtitle neon-text">
-                            Эксперт по ИИ Автоматизации и Интеграции
+                            {t.hero.subtitle2}
                         </h2>
                     </div>
 
                     <div className="stats-grid">
                         <div className="stat-card">
                             <span className="stat-value">18M+</span>
-                            <span className="stat-label">Просмотров в TikTok</span>
+                            <span className="stat-label">{t.hero.viewsTikTok}</span>
                         </div>
                         <div className="stat-card">
                             <span className="stat-value">5M+</span>
-                            <span className="stat-label">Просмотров на YouTube</span>
+                            <span className="stat-label">{t.hero.viewsYT}</span>
                         </div>
                         <div className="stat-card">
                             <span className="stat-value">60k+</span>
-                            <span className="stat-label">Общая аудитория</span>
+                            <span className="stat-label">{t.hero.audience}</span>
                         </div>
                     </div>
 
                     <div className="hero-actions">
                         <a href="https://t.me/jcdrip" target="_blank" rel="noreferrer" className="cta-btn large">
-                            Обсудить проект
+                            {t.hero.discuss}
                         </a>
                     </div>
                 </div>

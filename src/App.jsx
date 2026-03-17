@@ -9,9 +9,12 @@ import Cases from './components/Cases';
 import Footer from './components/Footer';
 import Marquee from './components/Marquee';
 
+import { LanguageProvider } from './context/LanguageContext';
+
 function App() {
   return (
-    <div className="app">
+    <LanguageProvider>
+      <div className="app">
       <Header />
       <Marquee />
       <main>
@@ -23,7 +26,8 @@ function App() {
         <Cases />
       </main>
       <Footer />
-    </div>
+      </div>
+    </LanguageProvider>
   );
 }
 

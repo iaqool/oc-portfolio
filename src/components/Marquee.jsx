@@ -1,14 +1,15 @@
+import { useLanguage } from '../context/LanguageContext';
 import './Marquee.css';
 
 function Marquee() {
-    const text = "// ВИРТУАЛЬНЫЕ ИНФЛЮЕНСЕРЫ // ИИ АВТОМАТИЗАЦИЯ // ЛИДОГЕНЕРАЦИЯ // WEB3 ПРИЛОЖЕНИЯ // КОМПЬЮТЕРНОЕ ЗРЕНИЕ // MULTI-AGENT СИСТЕМЫ // ";
+    const { t } = useLanguage();
 
     return (
         <div className="marquee-container">
             <div className="marquee-content">
-                <span className="marquee-text">{text}</span>
-                <span className="marquee-text">{text}</span>
-                <span className="marquee-text">{text}</span>
+                <span className="marquee-text">{t.marquee.text}</span>
+                <span className="marquee-text">{t.marquee.text}</span>
+                <span className="marquee-text">{t.marquee.text}</span>
             </div>
         </div>
     );

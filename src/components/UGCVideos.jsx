@@ -1,3 +1,4 @@
+import { useLanguage } from '../context/LanguageContext';
 import './UGCVideos.css';
 
 // Load videos from ugc-videos folder
@@ -5,6 +6,7 @@ const videoModules = import.meta.glob('../assets/ugc-videos/*.{mp4,webm,mov}', {
 const ugcVideos = Object.values(videoModules).map(module => module.default);
 
 const UGCVideos = () => {
+    const { t } = useLanguage();
     // If no local videos found, use placeholder array
     const videos = ugcVideos.length > 0 ? ugcVideos : [
         "https://cdn.coverr.co/videos/coverr-a-man-working-on-his-laptop-in-a-coffee-shop-2679/1080p.mp4",
@@ -20,8 +22,8 @@ const UGCVideos = () => {
     return (
         <section className="ugc-section">
             <h2 className="section-title">
-                <span className="glitch-text" data-text="UGC">UGC</span>
-                <span className="neon-text"> Content</span>
+                <span className="glitch-text" data-text={t.ugc.title}>{t.ugc.title}</span>
+                <span className="neon-text">{t.ugc.titleHighlight}</span>
             </h2>
 
             <div className="ugc-carousel-container">

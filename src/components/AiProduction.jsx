@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import './AiProduction.css';
 
 // Load videos from ai-production folder
@@ -10,27 +11,29 @@ const photoModules = import.meta.glob('../assets/ai-photos/*.{jpg,png,jpeg,webp}
 const aiPhotos = Object.values(photoModules).map(module => module.default);
 
 function AiProduction() {
+    const { t } = useLanguage();
+    
     const aiServices = [
         {
-            title: "Предметная ИИ-съемка",
-            desc: "Помещаем ваш товар (от косметики до техники) в любые, даже самые фантастические и дорогие локации. Идеально для маркетплейсов, каталогов и соцсетей.",
-            price: "от 15 000 ₸",
+            title: t.aiProduction.service1.title,
+            desc: t.aiProduction.service1.desc,
+            price: `${t.aiProduction.priceFrom} 15 000 ₸`,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
             )
         },
         {
-            title: "Рекламные креативы под ключ",
-            desc: "Генерация сочных макетов для баннеров, наружной рекламы, листовок и таргета, которые сразу пробивают баннерную слепоту.",
-            price: "от 20 000 ₸",
+            title: t.aiProduction.service2.title,
+            desc: t.aiProduction.service2.desc,
+            price: `${t.aiProduction.priceFrom} 20 000 ₸`,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
             )
         },
         {
-            title: "Съемка с виртуальными моделями",
-            desc: "Эксклюзивное лицо для вашего бренда без кастингов: от стильной модели с гетерохромией для премиум-сегмента до K-pop персонажей.",
-            price: "от 35 000 ₸",
+            title: t.aiProduction.service3.title,
+            desc: t.aiProduction.service3.desc,
+            price: `${t.aiProduction.priceFrom} 35 000 ₸`,
             icon: (
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             )
@@ -41,12 +44,12 @@ function AiProduction() {
         <section id="ai-production" className="ai-production-section">
             <div className="container">
                 <div className="ai-production-header">
-                    <div className="badge">Хит продаж</div>
+                    <div className="badge">{t.aiProduction.badge}</div>
                     <h2 className="section-title">
-                        AI-Продакшен и <span className="highlight">Коммерческая Съемка</span>
+                        {t.aiProduction.title} <span className="highlight">{t.aiProduction.titleHighlight}</span>
                     </h2>
                     <p className="ai-production-subtitle">
-                        Безупречный визуальный контент для вашего бренда в <span className="text-glow">10 раз быстрее и дешевле</span> классической съемки.
+                        {t.aiProduction.subtitle} <span className="text-glow">{t.aiProduction.subtitleGlow}</span> {t.aiProduction.subtitleEnd}
                     </p>
                 </div>
 
