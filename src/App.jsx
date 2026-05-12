@@ -1,33 +1,19 @@
 import './App.css';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import UGCVideos from './components/UGCVideos';
-import AiProduction from './components/AiProduction';
-import WebDevServices from './components/WebDevServices';
-import Services from './components/Services';
-import Cases from './components/Cases';
-import Footer from './components/Footer';
-import Marquee from './components/Marquee';
-
-import { LanguageProvider } from './context/LanguageContext';
+import HeroSection from './components/HeroSection';
+import MarqueeSection from './components/MarqueeSection';
+import AboutSection from './components/AboutSection';
+import ServicesSection from './components/ServicesSection';
+import ProjectsSection from './components/ProjectsSection';
 
 function App() {
   return (
-    <LanguageProvider>
-      <div className="app">
-      <Header />
-      <Marquee />
-      <main>
-        <Hero />
-        <UGCVideos />
-        <AiProduction />
-        <WebDevServices />
-        <Services />
-        <Cases />
-      </main>
-      <Footer />
-      </div>
-    </LanguageProvider>
+    <div id="top" className="min-h-screen" style={{ background: '#0C0C0C', overflowX: 'clip' }}>
+      <HeroSection />
+      <MarqueeSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProjectsSection />
+    </div>
   );
 }
 
